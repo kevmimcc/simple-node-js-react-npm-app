@@ -12,6 +12,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				sh 'node -v'
+				sh 'pwd'
 				sh 'npm install'
 			}
 		}
