@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		docker {
-			image 'node:8.11-alpine'
+			image 'ruby:latest'
 			args '-p 3000:3000'
 		}
 	}
@@ -11,9 +11,9 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				sh 'node -v'
+				sh 'ruby -v'
 				sh 'pwd'
-				sh 'npm install'
+				sh 'gem list'
 			}
 		}
 		stage('Test') {
